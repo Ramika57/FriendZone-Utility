@@ -1,0 +1,7 @@
+
+    - Capitalization algorithm
+    - Friends img
+    - Discord.py[voice] compatability
+    - Seperate code command into .txt files loacted in topic folder
+    - Chiku is high again, alert Samar
+    
