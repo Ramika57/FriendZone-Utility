@@ -577,7 +577,7 @@ async def pair(ctx, member1_, plus, member2_):
         time.sleep(3)
         await ctx.send(embed = embedVar)
 
-
+'''
 # Command: Code
 @bot.command()
 async def code(ctx, code):
@@ -728,6 +728,7 @@ async def who(ctx):
 ```
         """)
         await ctx.send(embed = embedVar)
+'''
         
 
 bot.run(keys.key['Token'])
