@@ -6,6 +6,7 @@ from urllib import parse, request
 import re
 import random
 import asyncio
+import keys 
 
 bot = commands.Bot(command_prefix = ';;', description = "This is a Helper Bot")
 
@@ -589,7 +590,7 @@ async def code(ctx, code):
         0xE666B3, 0x33991A, 0xCC9999, 0xB3B31A, 0x00E680, 
         0x4D8066, 0x809980, 0xE6FF80, 0x1AFF33, 0x999933,
         0xFF3380, 0xCCCC00, 0x66E64D, 0x4D80CC, 0x9900B3, 
-        0xE64D66, 0x4DB380, 0xFF4D4D, 0x99E6E6, 0x6666FF];
+        0xE64D66, 0x4DB380, 0xFF4D4D, 0x99E6E6, 0x6666FF]
     col_embed = random.choice(colorArray)
     if code == "-":
         embedVar = discord.Embed(title="Lifesim", description="**Behind The Code**", color=col_embed)
@@ -729,4 +730,4 @@ async def who(ctx):
         await ctx.send(embed = embedVar)
         
 
-bot.run('NzU3MTQzMzEzMTg1ODk4NTE1.X2cGqA.dzJpfNFgWUHq-vkwr22m3LHptUY')
+bot.run(keys.key['Token'])
