@@ -223,6 +223,11 @@ async def members(ctx):
             "ID": 384565568264601600
         },
 
+        "Thenujaya": {
+            "Name": "Thenujaya",
+            "ID": 331273833606676491
+        },
+
         "Tikki": {
             "Name": "Tikki",
             "ID": 782840010352754728
@@ -298,12 +303,13 @@ async def members(ctx):
     <@{}>: {}
     <@{}>: {}
     <@{}>: {}
+    <@{}>: {}
     """.format(members_dict['Ramika']['ID'], members_dict['Ramika']['Name'], members_dict['Samar']['ID'],
     members_dict['Samar']['Name'], members_dict['Manuka']['ID'], members_dict['Manuka']['Name'], members_dict['Tony']['ID'], 
     members_dict['Tony']['Name'], members_dict['Dhiya']['ID'], members_dict['Dhiya']['Name'], members_dict['Sunny']['ID'], 
     members_dict['Sunny']['Name'], members_dict['Metheshr']['ID'], members_dict['Metheshr']['Name'], members_dict['Ishan']['ID'], 
     members_dict['Ishan']['Name'], members_dict['Casey']['ID'], members_dict['Casey']['Name'], members_dict['Harry']['ID'], 
-    members_dict['Harry']['Name']), inline=True)
+    members_dict['Harry']['Name'], members_dict['Thenujaya']['ID'], members_dict['Thenujaya']['Name']), inline=True)
     embedVar.add_field(name="**Swaggy Girlies:**", value="""
     <@{}>: {}
     <@{}>: {}
