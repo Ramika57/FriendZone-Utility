@@ -1,0 +1,6 @@
+@bot.command(pass_context = True)
+async def echo(ctx, channel: discord.TextChannel, *, message):
+    await ctx.message.add_reaction("✅")
+    await channel.send(message)
+    asyncio.sleep(2)
+    await ctx.message.delete()

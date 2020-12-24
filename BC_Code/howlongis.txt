@@ -1,0 +1,13 @@
+@bot.command()
+async def howdeepis(ctx, message):
+    lst = ["km", "m", "cm", "mm", "micro metres"]
+    rng = random.randint(-100, 1000)
+    lst_rng = random.choice(lst)
+    await ctx.send("{} {}".format(rng, lst_rng))
+
+@bot.command()
+async def howlongis(ctx, message):
+    lst = ["km", "m", "cm", "mm", "micro metres"]
+    rng = random.randint(-100, 1000)
+    lst_rng = random.choice(lst)
+    await ctx.send("{} {}".format(rng, lst_rng))

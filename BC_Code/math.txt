@@ -1,0 +1,18 @@
+@bot.command()
+async def math(ctx, numOne: float, operator, *, numTwo: float):
+    if operator == "*":
+        final0 = numOne * numTwo
+        final = round(final0, 2)
+        await ctx.send(final)
+    elif operator == "/":
+        final1 = numOne / numTwo
+        final = round(final1, 2)
+        await ctx.send(final)
+    elif operator == "+":
+        final2 = numOne + numTwo
+        final = round(final2, 2)
+        await ctx.send(final)
+    elif operator == "-":
+        final3 = numOne - numTwo
+        final = round(final3, 2)
+        await ctx.send(final)

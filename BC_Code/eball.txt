@@ -1,0 +1,9 @@
+@bot.command()
+async def eball(ctx, message):
+    lst = ["Yes", "Hell yeah", "Nah", "I Can Sense Something Good!", 
+    "Hell Nah Bruh", "Are You Kidding Me?", "That Doesn't Even Have An Answer Lmao", 
+    "As I See It, Yes!", "Better Not Tell You Now", "Cannot Predict Now", "Don't Count On It", 
+    "Most Likely", "My Reply Is No", "Outlook Good", "Without A Doubt", "100% Yes", "Signs Point To Yes", 
+    "Obviously!", "No."]
+    rng = random.choice(lst)
+    await ctx.send(rng)

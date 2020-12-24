@@ -253,9 +253,9 @@ async def members(ctx):
             "ID": 715345106626150473
         },
 
-        "JasmineB": {
-            "Name": "Jasmine Moverley Bonne",
-            "ID": 786910780028485642
+        "Rhythm": {
+            "Name": "Rhythm",
+            "ID": 791102742231253002
         },
 
         "JasmineY": {
@@ -277,6 +277,7 @@ async def members(ctx):
             "Name": "Micah",
             "ID": 758555021452509205
         }
+
         }
 
     colorArray = [0xFF6633, 0xFFB399, 0xFF33FF, 0xFFFF99, 0x00B3E6, 
@@ -323,8 +324,8 @@ async def members(ctx):
     <@{}>: {}
     """.format(members_dict['Tikki']['ID'], members_dict['Tikki']['Name'], members_dict['Neili']['ID'],
     members_dict['Neili']['Name'], members_dict['Chiku']['ID'], members_dict['Chiku']['Name'], members_dict['Lily']['ID'], 
-    members_dict['Lily']['Name'], members_dict['Ananya']['ID'], members_dict['Ananya']['Name'], members_dict['JasmineB']['ID'], 
-    members_dict['JasmineB']['Name'], members_dict['JasmineY']['ID'], members_dict['JasmineY']['Name'], members_dict['Emily']['ID'], 
+    members_dict['Lily']['Name'], members_dict['Ananya']['ID'], members_dict['Ananya']['Name'], members_dict['Rhythm']['ID'], 
+    members_dict['Rhythm']['Name'], members_dict['JasmineY']['ID'], members_dict['JasmineY']['Name'], members_dict['Emily']['ID'], 
     members_dict['Emily']['Name'], members_dict['Micah']['ID'], members_dict['Micah']['Name'], members_dict['Hayley']['ID'], 
     members_dict['Hayley']['Name']), inline=True)
 
@@ -348,7 +349,7 @@ async def eball(ctx, message):
 async def who(ctx):
     lst = ["Ramika", "Samar", "Manuka", "Ishan", "Sunny", "Harry", "Lily", "Ananya", "Neili", 
     "Chiku", "Tikki", "Jasmine Moverely Bonne", "Metheshr", "Tony", "Micah", "Emily", "Hayley", 
-    "Casey"]
+    "Casey", "Rhythm"]
     word = ["Defintely Has To Be", "100%", "Bro, It's", "Are You Kidding Me? It is", 
     "It's Truly", "Whithout Hesitation, It's 100%", "Without A Doubt", "It Has To Be", 
     "Smh, Isn't It Obvious That It's", "C'mon, It's 100%"]
@@ -435,7 +436,6 @@ async def samiku(ctx):
     embedVar.set_image(url = "{}".format(pic_rng))
 
     await ctx.send(embed = embedVar)
-
 
 # Command: Lifesim
 @bot.command()
@@ -583,7 +583,6 @@ async def pair(ctx, member1_, plus, member2_):
         time.sleep(3)
         await ctx.send(embed = embedVar)
 
-'''
 # Command: Code
 @bot.command()
 async def code(ctx, code):
@@ -608,97 +607,43 @@ async def code(ctx, code):
         await ctx.send(embed = embedVar)
     elif code == "eball":
         embedVar = discord.Embed(title="8Ball", description="**Behind The Code**", color=col_embed)
+        f = open('BC_Code/eball.txt', 'r')
+        note = f.read()
         embedVar.add_field(name="Python 3 Code:", value="""
         ```py
-@bot.command()
-async def eball(ctx, message):
-    lst = ["Yes", "Hell yeah", "Nah", "I Can Sense Something Good!", 
-    "Hell Nah Bruh", "Are You Kidding Me?", "That Doesn't Even Have An Answer Lmao", 
-    "As I See It, Yes!", "Better Not Tell You Now", "Cannot Predict Now", "Don't Count On It", 
-    "Most Likely", "My Reply Is No", "Outlook Good", "Without A Doubt", "100% Yes", "Signs Point To Yes", 
-    "Obviously!", "No."]
-    rng = random.choice(lst)
-    await ctx.send(rng)
+{}
         ```
-        """)
+        """.format(note))
         await ctx.send(embed = embedVar)
-    elif code == "howdeepis":
+    elif code == "howdeepis" or code == "howlongis":
         embedVar = discord.Embed(title="Howdeepis", description="**Behind The Code**", color=col_embed)
+        f = open('BC_Code/howlongis.txt', 'r')
+        note = f.read()
         embedVar.add_field(name="Python 3 Code:", value="""
         ```py
-@bot.command()
-async def howdeepis(ctx, message):
-    lst = ["km", "m", "cm", "mm", "micro metres"]
-    rng = random.randint(-100, 1000)
-    lst_rng = random.choice(lst)
-    await ctx.send("{} {}".format(rng, lst_rng))
-
-@bot.command()
-async def howlongis(ctx, message):
-    lst = ["km", "m", "cm", "mm", "micro metres"]
-    rng = random.randint(-100, 1000)
-    lst_rng = random.choice(lst)
-    await ctx.send("{} {}".format(rng, lst_rng))
+{}
         ```
-        """)
-        await ctx.send(embed = embedVar)
-    elif code == "howlongis":
-        embedVar = discord.Embed(title="Howlongis", description="**Behind The Code**", color=col_embed)
-        embedVar.add_field(name="Python 3 Code:", value="""
-        ```py
-@bot.command()
-async def howdeepis(ctx, message):
-    lst = ["km", "m", "cm", "mm", "micro metres"]
-    rng = random.randint(-100, 1000)
-    lst_rng = random.choice(lst)
-    await ctx.send("{} {}".format(rng, lst_rng))
-
-@bot.command()
-async def howlongis(ctx, message):
-    lst = ["km", "m", "cm", "mm", "micro metres"]
-    rng = random.randint(-100, 1000)
-    lst_rng = random.choice(lst)
-    await ctx.send("{} {}".format(rng, lst_rng))
-```
-        """)
+        """.format(note))
         await ctx.send(embed = embedVar)
     elif code == "math":
         embedVar = discord.Embed(title="Math", description="**Behind The Code**", color=col_embed)
+        f = open('BC_Code/math.txt', 'r')
+        note = f.read()
         embedVar.add_field(name="Python 3 Code:", value="""
         ```py
-@bot.command()
-async def math(ctx, numOne: float, operator, *, numTwo: float):
-    if operator == "*":
-        final0 = numOne * numTwo
-        final = round(final0, 2)
-        await ctx.send(final)
-    elif operator == "/":
-        final1 = numOne / numTwo
-        final = round(final1, 2)
-        await ctx.send(final)
-    elif operator == "+":
-        final2 = numOne + numTwo
-        final = round(final2, 2)
-        await ctx.send(final)
-    elif operator == "-":
-        final3 = numOne - numTwo
-        final = round(final3, 2)
-        await ctx.send(final)
+{}
 ```
-        """)
+        """.format(note))
         await ctx.send(embed = embedVar)
     elif code == "echo":
         embedVar = discord.Embed(title="Echo", description="**Behind The Code**", color=col_embed)
+        f = open('BC_Code/echo.txt', 'r')
+        note = f.read()
         embedVar.add_field(name="Python 3 Code:", value="""
         ```py
-@bot.command(pass_context = True)
-async def echo(ctx, channel: discord.TextChannel, *, message):
-    await ctx.message.add_reaction("✅")
-    await channel.send(message)
-    asyncio.sleep(2)
-    await ctx.message.delete()
+{}
 ```
-        """)
+        """.format(note))
         await ctx.send(embed = embedVar)
     elif code == "helpme":
         embedVar = discord.Embed(title="Help", description="**Behind The Code**", color=col_embed)
@@ -734,7 +679,7 @@ async def who(ctx):
 ```
         """)
         await ctx.send(embed = embedVar)
-'''
+
         
 
 bot.run(keys.key['Token'])
