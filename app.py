@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord.utils import get
 import datetime
 import time
 from urllib import parse, request
@@ -38,7 +39,7 @@ async def helpme(ctx):
     col_embed = random.choice(colorArray)
     embedVar = discord.Embed(title="FriendZone Commands", description="**Prefix: ;;**", color=col_embed)
     embedVar.add_field(name="**__Utility__**", value="`ping, info, echo`", inline=True)
-    embedVar.add_field(name="**__Fun__**", value="`pair, lifesim, eball, howdeepis, \n howlongis, who, pics, samiku`", inline=False)
+    embedVar.add_field(name="**__Fun__**", value="`pair, lifesim, eball, howdeepis, \n howlongis, who, pics, samiku, \n never`", inline=False)
     embedVar.add_field(name="**__Math__**", value="`math, rng`")
     await ctx.send(embed = embedVar)
 
@@ -135,6 +136,100 @@ async def pics(ctx):
 
     await ctx.send(embed = embedVar)
 
+# Command: Never
+@bot.command()
+async def never(ctx):
+    choice = [
+        'Never have I ever played hooky from school or work',
+        'Never have I ever rode a motorcycle',
+        'Never have I ever lost a bet',
+        'Never have I ever went skinny-dipping',
+        'Never have I ever sang karaoke',
+        'Never have I ever broken a bone',
+        'Never have I ever lived alone',
+        'Never have I ever been on a boat',
+        'Never have I ever broken up with someone',
+        'Never have I ever kissed someone in public',
+        'Never have I ever fought in public',
+        'Never have I ever won the lottery',
+        'Never have I ever had to go to court',
+        'Never have I ever crashed a wedding',
+        'Never have I ever kissed more than one person in 24 hours',
+        'Never have I ever pranked someone',
+        'Never have I ever had a one-night stand',
+        'Never have I ever regifted a gift',
+        'Never have I ever trolled someone on social media',
+        'Never have I ever climbed out of a window',
+        'Never have I ever drove over a curb',
+        'Never have I ever peed my pants as a teen',
+        'Never have I ever got on the wrong train or bus',
+        'Never have I ever cursed in a place of worship',
+        'Never have I ever snooped through someone’s stuff',
+        'Never have I ever went 24 hours without showering',
+        'Never have I ever had to take a walk of shame',
+        'Never have I ever went on a solo vacation',
+        'Never have I ever went on a road trip',
+        'Never have I ever ate an entire pizza by myself',
+        'Never have I ever saved a life',
+        'Never have I ever got a tattoo',
+        'Never have I ever wanted to be on a reality TV show',
+        'Never have I ever started a fire',
+        'Never have I ever got stopped by airport security',
+        'Never have I ever went viral online',
+        'Never have I ever left gum in a public space',
+        'Never have I ever slept outdoors for an entire night',
+        'Never have I ever ran a marathon',
+        'Never have I ever made a speech in front of 100 people or more',
+        'Never have I ever "relieved myself" in a public pool',
+        'Never have I ever lied to my best friend about who I was with',
+        'Never have I ever left someone on read',
+        'Never have I ever lied about my age',
+        'Never have I ever made up a story about someone who wasn’t real',
+        'Never have I ever believed something was haunted',
+        'Never have I ever participated in a protest',
+        'Never have I ever had sleep paralysis',
+        'Never have I ever pulled an all-nighter',
+        'Never have I ever role-played',
+        'Never have I ever regretted an apology',
+        'Never have I ever pretended I was sick for attention',
+        'Never have I ever disliked something that I cooked',
+        'Never have I ever deleted a post on social media because it didn’t get enough likes',
+        'Never have I ever spent more than $100 on a top',
+        'Never have I ever thrown a drink at someone',
+        'Never have I ever worn someone else’s underwear',
+        'Never have I ever traveled to Europe',
+        'Never have I ever attempted a trendy diet',
+        'Never have I ever binged an entire series in one day',
+        'Never have I ever spied on my neighbors',
+        'Never have I ever made fun of someone',
+        'Never have I ever watched keeping up with the Kardashians',
+        'Never have I ever stole something with a higher value than $10',
+        'Never have I ever really liked a song by Justin Bieber',
+        'Never have I ever lied to a friend to avoid a greater evil',
+        'Never have I ever escaped from class',
+        'Never have I ever cheated on a test',
+        'Never have I ever grabbed the wrong person’s hand',
+        'Never have I ever fell in love with anyone through the network',
+        'Never have I ever lied in this game',
+        'Never have I ever stuck gum under a desk',
+        'Never have I ever stop remembering my first love',
+        'Never have I ever done pictures in underwear',
+        'Never have I ever gone to the bathroom and then not wash my hands',
+        'Never have I ever Been in love with my teacher',
+        'Never have I ever Been robbed',
+        'Never have I ever done something I regret',
+        'Never have I ever picked my nose in public',
+        'Never have I ever liked one of my friends',
+        'Never have I ever liked someone in the server',
+        'Never have I ever played hooky',
+        'Never have I ever been to another country',
+        'Never have I ever lied for money',
+        'Never have I ever dyed my hair'
+    ]
+
+    final_choice = random.choice(choice)
+
+    await ctx.send(final_choice)
 
 # Command: Rng
 @bot.command()
@@ -152,23 +247,22 @@ async def echo(ctx, channel: discord.TextChannel, *, message):
 
 # Command: Math
 @bot.command()
-async def math(ctx, numOne: float, operator, *, numTwo: float):
-    if operator == "*":
-        final0 = numOne * numTwo
-        final = round(final0, 2)
-        await ctx.send(final)
-    elif operator == "/":
-        final1 = numOne / numTwo
-        final = round(final1, 2)
-        await ctx.send(final)
-    elif operator == "+":
-        final2 = numOne + numTwo
-        final = round(final2, 2)
-        await ctx.send(final)
-    elif operator == "-":
-        final3 = numOne - numTwo
-        final = round(final3, 2)
-        await ctx.send(final)
+async def math(ctx, *, expression:str):
+    calculation = eval(expression)
+    colorArray = [0xFF6633, 0xFFB399, 0xFF33FF, 0xFFFF99, 0x00B3E6, 
+        0xE6B333, 0x3366E6, 0x999966, 0x99FF99, 0xB34D4D,
+        0x80B300, 0x809900, 0xE6B3B3, 0x6680B3, 0x66991A, 
+        0xFF99E6, 0xCCFF1A, 0xFF1A66, 0xE6331A, 0x33FFCC,
+        0x66994D, 0xB366CC, 0x4D8000, 0xB33300, 0xCC80CC, 
+        0x66664D, 0x991AFF, 0xE666FF, 0x4DB3FF, 0x1AB399,
+        0xE666B3, 0x33991A, 0xCC9999, 0xB3B31A, 0x00E680, 
+        0x4D8066, 0x809980, 0xE6FF80, 0x1AFF33, 0x999933,
+        0xFF3380, 0xCCCC00, 0x66E64D, 0x4D80CC, 0x9900B3]
+    col_embed = random.choice(colorArray)
+    embedVar = discord.Embed(title="Calculator", color=col_embed)
+    embedVar.add_field(name = "**__Expression__**", value = f"=> {expression}", inline = False)
+    embedVar.add_field(name = "**__Answer__**", value = f"=> {calculation}", inline = False)
+    await ctx.send(embed = embedVar)
 
 @bot.command()
 async def members(ctx):
@@ -405,6 +499,28 @@ async def info(ctx):
 
     await ctx.send(embed = embedVar)
 
+@bot.listen()
+async def on_message(message):
+    if message.author.id == 751987568056205383: 
+        lst = ['klaus', 'stefan', 'damon', 'enzo', 'elijah', 'kol', 'kai', 'lucien']
+        for x in lst:
+            if x in message.content:
+                await message.channel.send('<@559619749932433430> The Audacity Of This Mf, Mute This Bitch')
+    lst_ = ['✨']
+    for x in lst_:
+        if x in message.content:
+            await message.channel.send('What are you a girl?')
+
+@bot.command()
+async def messages(ctx):
+    lst = []
+    for channel in ctx.guild.text_channels:
+        async for msgs in channel.history(limit = None):
+            lst.append(msgs)
+    await ctx.send(len(lst))
+
+
+
 # Comamand: Samiku
 @bot.command()
 async def samiku(ctx):
@@ -578,6 +694,7 @@ async def pair(ctx, member1_, plus, member2_):
         communications_per, "".join(c_bar), per_bar, values_per, "".join(v_bar), per_bar, emotions_per, "".join(e_bar), 
         per_bar, sharedactivities_per, "".join(s_bar), per_bar, summary_per)
 , inline=False)
+        embedVar.set_footer(text = "Does this embed look jumbled to you? This maybe because of the \ndevice you are using isn't suported. If you want to see the full \nclear embed, use a PC, iPad or Tablet.")
 
         await ctx.send("Finding Match...")
         time.sleep(3)
@@ -679,6 +796,7 @@ async def who(ctx):
 ```
         """)
         await ctx.send(embed = embedVar)
+
 
         
 
